@@ -1,0 +1,68 @@
+The time-of-flight (ToF) range imaging cameras indirectly measure the time
+taken from the modulation light source to the scene and back to the camera
+and it is this principle that is used in depth cameras to perform depth
+measurements. This thesis is focused on ToF cameras that are based on the
+amplitude modulated continuous wave (AMCW) lidar techniques which measure
+the phase difference between the emitted and reflected light signals. Due
+to their portable size, feasible design, low weight and low energy consumption,
+these cameras have high demand in many applications. Commercially available
+AMCW ToF cameras have relatively high noise levels due to electronic
+sources such as shot noise, reset noise, amplifier noise, crosstalk, analogue to
+digital converters quantization and multipath light interference. Many noise
+sources in these cameras such as harmonic contamination, non-linearity, multipath
+interferences and light scattering are well investigated. In contrast, the
+effect of electronic jitter as a noise source in ranging cameras is barely studied.
+
+Jitter is defined to be any timing movement with reference to an ideal
+signal. An investigation of the effect of jitter on range imaging is important
+because timing errors potentially could cause errors in measuring phase, thus
+in range. The purpose of this research is to investigate the effect of jitter on
+range measurement in AMCW ToF range imaging. This is achieved by three
+main contributions: a development of a common algorithm for measurement of
+the jitter present in signals from depth cameras, secondly the proposal of a cost
+effective alternative method to measure jitter by using a software defined radio
+receiver, and finally an analysis of the influence of jitter on range measurement.
+
+Among the three contributions of this thesis, first, an algorithm for jitter
+extraction of a signal without access to a reference clock signal is proposed.
+The proposed algorithm is based upon Fourier analysis with signal processing
+techniques and it can be used for real time jitter extraction on a modulated
+signal with any kind of shape (sinusoidal, triangular, rectangular). The method
+is used to measure the amount of jitter in the light signals of two AMCW 
+ToF range imaging cameras, namely, MESA Imaging SwissRanger 4000 and
+SoftKinetic DepthSense 325. Periodic and random jitter were found to be
+present in the light sources of both cameras with the MESA camera notably
+worse with random jitter of 159.6 ps RMS in amplitude.
+
+Next, in a novel approach, an inexpensive software defined radio (SDR)
+USB dongle is used with the proposed algorithm to extract the jitter in the
+light signal of the above two ToF cameras. This is a cost effective alternative
+to the expensive real-time medium speed digital oscilloscope. However, it is
+shown that this method has some significant limitations, (1) it can measure
+the jitter only up to half of the intermediate-frequency obtained from the down
+shift of the amplified radio frequency with the local oscillator which is less than
+the Nyquist frequency of the dongle and (2) if the number of samples per cycle
+captured from this dongle is not sufficient then the jitter extraction does not
+succeed since the signal is not properly (smoothly) represented.
+
+Finally, the periodic and random jitter influence on range measurements 
+made with AMCW range imaging cameras are studied. An analytical model
+for the periodic jitter on the range measurements under the heterodyne and
+homodyne operations in AMCW ToF range imaging cameras is obtained in
+the frequency domain. The analytical model is tested through simulated data
+with various parameters in the system. The product of angular modulation
+frequency of the camera and the amplitude of the periodic jitter is a characteristic
+parameter for the phase error due to the presence of periodic jitter.
+We found that for currently available AMCW cameras (modulation frequency
+less than 100 MHz), neither periodic nor random jitter has a measurable effect
+on range measurement. But with modulation frequency increases and integration
+period decreases likely in the near future, periodic jitter may have a
+measurable detection affect on ranging.
+
+The influence of random jitter is also investigated by obtaining an analytical
+model based on stochastic calculus by using fundamental statistics and
+Fourier analysis. It is assumed that the random jitter follows the Gaussian distribution.
+Monte Carlo simulation is performed on the model obtained for a 1 ms 
+integration period. We found increasing the modulation frequency above
+approximately 400 MHz with random jitter of 140 ps has a measurable affect
+on ranging.
